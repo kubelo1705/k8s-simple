@@ -1,0 +1,12 @@
+Create secret for app and mysql:
+-app: kubectl create secret generic app-config \
+	--from-literal=SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/docker?createDatabaseIfNotExist=true \
+	--from-literal=SPRING_DATASOURCE_USERNAME=root \
+	--from-literal=SPRING_DATASOURCE_PASSWORD=123456
+-db: kubectl create secrect generic mysql-config \
+	--from-literal=MYSQL_ROOT_PASSWORD=123456 \
+	--from-literal=MYSQL_DATABASE=docker
+
+Create pv and pvc follow yaml files
+
+Deploy and create svc
